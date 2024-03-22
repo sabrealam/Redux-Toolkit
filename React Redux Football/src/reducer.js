@@ -14,10 +14,10 @@ export let mainReducer = (
   }
 };
 
-export let pageReducer = (state={page : 1 , isPage : false  } , action)=>{
+export let pageReducer = (state={page : 1 , goPage : false ,backPage : false } , action)=>{
     switch(action.type){
         case SET_PAGE_TO_FORWARD:
-            return  state.page == 1159 ? { ...state ,page : state.page , isPage : true} : {
+            return  state.page == 1159 ? state : {
                 ...state,
                 page : state.page + 1,
                 isPage : false
@@ -27,7 +27,7 @@ export let pageReducer = (state={page : 1 , isPage : false  } , action)=>{
             
 
         case SET_PAGE_TO_BACK:
-        return  state.page == 1 ? { ...state ,page : state.page , isPage : true} : {
+        return  state.page == 1 ? state : {
                 ...state,
                 page : state.page - 1,
                 isPage : false
@@ -37,7 +37,7 @@ export let pageReducer = (state={page : 1 , isPage : false  } , action)=>{
             return {
                 ...state,
                 page : 1,
-                isPage : false
+                // isPage : false
             }
 
         case SET_PAGE_TO_LAST:

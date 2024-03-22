@@ -123,7 +123,7 @@ function Football({ data, page }) {
             <IoArrowForwardCircleOutline />
           </Button>
           <Button
-            isDisabled={page.isPage}
+            // isDisabled={page.isPage}
             onClick={() => {
               dispatch({
                 type: SET_PAGE_TO_LAST,
